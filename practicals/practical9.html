@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical -9</title>
+    <style>
+        html{
+            scroll-padding-top: 130px;
+            scroll-behavior: smooth;
+        }
+        
+        .footer{
+            height: 90px;
+            background-color: rgb(221, 150, 221);
+            text-align: center;
+            font-weight: bolder;
+            color: white;
+            line-height: 2;
+        }
+        .content{
+            height: 140vh;
+            margin-top: 130px;
+            background-color: skyblue;
+            line-height: 140vh;
+            text-align: center;
+            font-weight: bolder;
+            color: white;
+            font-size: 20px;
+            background-image: url('../assets/banner.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            background-color:orangered;
+            border-radius: 100%;
+            height: 300px;
+            margin: 20px;
+            width: 300px;
+        }
+        
+        .imageContainer{
+            display: inline-flex;
+            height: 400px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        .mainContentContainer{
+            width: 50%;
+            height: 600px;
+            background-color: yellowgreen;
+        }
+        .s2Container{
+            background-color: white;
+            width: 100%;
+            height: 600px;
+            display: inline-flex;
+        }
+        .mainContent{
+            width: 50%;
+            background-color: grey;
+            height: 580px;
+            margin-right: 10px;
+            margin-top: 20px;
+            line-height: 580px;
+        }
+        .article{
+            height: 600px;
+            width: 50%;
+            background-color: white;
+        }
+        .articleContainer1{
+            height: 33%;
+            width: 100%;
+            background-color: black;
+            line-height: 160px;
+            background-image: url(../assets/article1.jpg);
+            margin-bottom: 10px;
+            margin-top: 20px;
+            background-position: center;
+        }    
+        .articleContainer2{
+            height: 30%;
+            width: 100%;
+            background-color: black;
+            line-height: 160px;
+            background-image: url(../assets/aarticle2.jpg);
+            margin-bottom: 10px;
+            background-position: center;
+        }
+        .articleContainer3{
+            height: 27%;
+            width: 100%;
+            background-color: black;
+            line-height: 160px;
+            background-image: url(../assets/article3.jpg);
+            background-position: center;
+            
+        }   
+        .text{
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+        }
+        .user{
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            border-width: 5;
+            border-color: black;
+            border-style: solid;
+            margin-right: 20px;
+        }
+        .bannerText{
+            color: white;
+            font-family: arial;
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: left;
+            line-height: 50px;
+        }
+        .navigation{
+            text-align: center;
+            position: fixed;
+            height: 70px;
+            width: 100%;
+            top: 0;
+            background-color: black;
+         }
+     
+        .menu li {
+            list-style: none;
+            display: inline-flex;
+            line-height: 70px;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            font-family: arial;
+            text-transform: uppercase;
+            padding: 0px 40px;
+        }
+        .menu li a:hover {
+              background-color: orangered;
+        }
+        .fa{
+            margin-right: 5px;
+        }
+        .navigation ul li:hover{
+            background-color:tomato;
+        }
+        .aboutUsContent{
+            color:white;
+            line-height: 2vh;
+            font-weight: bold;
+            overflow: hidden;
+            word-spacing: 10px;
+            line-height: 1.3;
+        }
+        .container1{
+            background-color:black;
+            border-radius: 0%;
+            height: 440px;
+            margin: 20px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .img{
+            width: 300px;
+            height: 170px;
+        }
+        .paragraphContainer{
+            height: 150px;
+            margin: 10px;
+            line-height: 1.8;
+            text-align: left;
+            overflow: hidden;
+        }
+        .paragraph{
+            margin-left: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .button{
+            background-color: rgb(218, 26, 26);
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin : 15px;
+        }
+        .a1{
+            text-decoration: none;
+            color: white;
+            display:block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .a1:hover{
+            background: blue;
+           
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .show-btn, .hide-btn{
+            font-size: 30px;
+            color: white;
+            display: none;
+        }
+        .show-btn{
+            float: right;
+        }
+        .show-btn:hover, .hide-btn:hover{
+            color: orangered;
+        }
+        #check{
+            position: absolute;
+            visibility: hidden; 
+            z-index: -10;
+        }
+        @media screen and (max-width : 830px){
+            .show-btn, .hide-btn{
+                display: block;
+            } 
+            .menu{
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: .7s;
+                line-height: normal;
+                background-color: black;
+                
+            }
+            #check:checked ~ .menu{
+                right: 0%;
+            }
+            .menu li{
+                display: block;
+            }
+            .menu li a{
+                display: block;
+                font-size: 22px;
+            }
+            .hide-btn{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                padding-bottom: 40px;
+                
+            }
+            
+            .s2Container{
+                height: fit-content;
+                display: inline-block;
+            }
+            .s2Container .mainContent{
+                width: 100%;
+                height: fit-content;
+            }
+            .article{
+                width: 100%;
+            }
+            .imageContainer{
+                
+                display:block;
+                height: fit-content;
+                width: 50%;
+                
+                margin:auto;
+                
+            }
+           .user{
+               display:block;
+               margin:auto;
+               margin-bottom: 30px;
+               padding:10px;
+           }
+           .container1{
+            display:block;
+            margin:auto;   
+            padding:10px; 
+            margin-bottom: 40px;
+            width: 320px;
+           }
+            
+            
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body style="background-color:white;">
+        <div class="navigation">
+            <input type="checkbox"  id="check">
+            <label for="check" class="show-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="menu">    
+                <li><a href="#top"><i class="fa fa-home"></i>HOME</a></li>
+                <li><a href="#aboutUs"><i class="fa fa-info-circle"></i>ABOUT US</a></li>
+                <li><a href="#TeamMembers"><i class="fa fa-users"></i>TEAM</a></li>
+                <li><a href="#techUsed"><i class="fa fa-wrench"></i>TECHNOLOGIES</a></li>
+                <li><a href="#contact"><i class="fa fa-phone"></i>CONTACT</a></li>
+                <label for="check" class="hide-btn">
+                    <i class="fa fa-times"></i> 
+                </label>
+            </ul>
+        </div>
+    <div class = "content" >
+        
+        <p class="bannerText">Practical - 8</p>
+    </div>
+    <h2 style="text-align: center;font-size: 40px; font-family: Arial; font-weight: 800;" id="TeamMembers">TEAM MEMBERS</h2>
+    <div class="imageContainer">
+    
+        <img class = "user"  src="../assets/user1.png" />
+   
+    
+        <img class="user" src="../assets/user2.png" />
+   
+   
+        <img class="user" src="../assets/user3.png" />
+   
+        <img class="user" src="../assets/user4.png" />
+   
+    </div>
+    <h2 style="text-align: center;font-size: 40px; font-family: Arial;font-weight: 800;" id="aboutUs">ABOUT US</h2>
+    <div class="s2Container">
+        <div class="mainContent">
+            <h3 style="color: black;font-weight: bolder; line-height: 5vh;font-size: 22px;">About Projects</h3>
+            <p class="aboutUsContent">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit debitis fugit illo dolores. Quos, beatae! Quis tempore magnam sed dicta. A corporis odit repudiandae aspernatur magni illo, architecto repellat delectus quod maxime rem ex quae, placeat alias laudantium unde. Consequatur ad quasi expedita saepe voluptatibus quos, at deleniti optio cumque, enim deserunt vel, sed dolor reprehenderit similique ea vitae quidem iusto earum esse ab voluptate illum. Totam ipsum esse recusandae ut itaque! Aliquid, optio adipisci. Perferendis, nobis cum! Eaque debitis tempore dolore accusamus unde ipsum quam molestiae perspiciatis, corrupti veritatis! Reiciendis praesentium quas, quia commodi laudantium et, dicta dignissimos, iure eveniet tempore dolore deleniti aperiam itaque cumque. Soluta, minima accusantium, culpa veniam officia architecto porro modi libero autem eum, exercitationem optio blanditiis et amet dolorem? Similique magni reiciendis, totam ex laborum, iusto, natus ipsa obcaecati atque voluptatum inventore recusandae beatae officia aspernatur! Vel deleniti, expedita soluta rerum at accusamus perspiciatis illo eius id odio incidunt corrupti ipsam. Repellendus asperiores et eius dolorum labore veniam vel, nesciunt, amet vero, obcaecati sit explicabo maxime unde iusto est. Blanditiis, quas neque. Eaque iusto velit cumque, illo minima accusamus iste praesentium itaque pariatur laborum sit similique voluptas fugiat impedit quam soluta eveniet ratione dolor error nulla inventore nobis magni ex! A modi tenetur impedit veniam rem inventore! Accusantium odit voluptatibus doloremque doloribus. Veniam at, corrupti, unde culpa illo dolor debitis quam eligendi neque eum, saepe sapiente commodi animi blanditiis necessitatibus beatae enim tempore et a minima inventore. Dolore nisi fugit commodi et distinctio accusantium facilis quia natus magni, maiores, beatae debitis non iure culpa tempora, nam labore similique. Dolores, maxime beatae cumque excepturi illum est ipsam blanditiis incidunt odio! Odit sint optio mollitia laudantium voluptas asperiores quaerat pariatur dolores similique! Dolorem omnis voluptates sint. Nulla quidem nihil soluta voluptate, veritatis magni, aspernatur est esse id maxime doloremque excepturi voluptatibus ipsam. Eius repudiandae maxime possimus obcaecati corrupti, odit nam dolor ad dolorum consectetur? Recusandae temporibus harum, natus corrupti quam odit non cum laboriosam dignissimos ratione saepe. Tenetur sapiente nam, laboriosam veniam sed vero porro libero dolore molestias quibusdam officia ipsum nisi neque impedit, assumenda non quas laudantium illum rerum error enim vitae odio? Vitae omnis velit dolorem blanditiis minus reprehenderit ut, sapiente, aperiam quas quia facilis. Dicta possimus quam sunt praesentium magni nostrum nulla earum similique molestias esse aperiam voluptatibus, repudiandae consequuntur. Iure veniam asperiores ut sequi mollitia nisi aliquid dignissimos accusantium saepe fugit obcaecati odit porro ducimus earum, veritatis ullam assumenda quos debitis necessitatibus commodi. In animi velit architecto!
+            </p>
+        </div>
+        <div class="article">
+            <div class="articleContainer1">
+               <u><h2 style="color: black;font-weight: 900; line-height: 13vh;font-size: 22px;font-family: Arial;text-align: center;">Project - 1</h2></u>
+            </div>
+            <div class="articleContainer2">
+               <u> <h2 style="color: black(129, 127, 127);font-weight: 900; line-height: 5vh;font-size: 22px;font-family: Arial;text-align: center;">Project - 2</h2></u>
+            </div>
+            <div class="articleContainer3">
+                <u><h2 style="color: black;font-weight:900; line-height: 5vh;font-size: 22px;font-family: Arial;text-align: center;">Project - 3</h2></u>
+            </div>
+        </div>
+    </div>
+    <h2 style="text-align: center;line-height: 5; font-size: 40px; font-family: Arial;font-weight: 800;" id = "techUsed">Technologies Used</h2>
+    <div class="imageContainer">
+     
+            <div class = "container1">
+                    <div>
+                        <img src="../assets/html.jpg" class="img"/>
+                    </div>                             
+                    <div class="heading">
+                        <h4 style="color: white; text-align: center;font-weight: bolder;">
+                            Introduction to HTML
+                        </h4>
+                    </div>
+                    <div class="paragraphContainer">
+                        <p class="paragraph" style="color: orangered;">
+                            HTML stands for HyperText Markup Language. It is used to design web pages using a markup language. 
+                        HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the 
+                        web pages. A markup language is used to define the text document within tag which defines the 
+                        structure of web pages. This language is used to annotate (make notes for the computer) text 
+                        so that a machine can understand it and manipulate text accordingly. Most markup languages (e.g. HTML) 
+                        are human-readable. The language uses tags to define what manipulation has to be done on the text. 
+                             HTML is a markup language used by the browser to manipulate text, images, and other content, in order
+                        to display it in the required format. HTML was created by Tim Berners-Lee in 1991. The first-ever
+                        version of HTML was HTML 1.0, but the first standard version was HTML 2.0, published in 1999.
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="./htmlIntro.html" target="_blank" class="a1">Read More</a>
+                    </div>               
+            </div>
+            <div class = "container1">
+                <div>
+                    <img src="../assets/css.png" class="img"/>
+                </div>                             
+                <div class="heading">
+                    <h4 style="color: white; text-align: center;font-weight: bolder;">
+                        Introduction to CSS
+                    </h4>
+                </div>
+                <div class="paragraphContainer">
+                    <p class="paragraph" style="color: rgb(194, 5, 137)">
+                        Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.
+                        CSS is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Web Development Domain. I will list down some of the key advantages of learning CSS:
+                          * Create Stunning Web site - CSS handles the look and feel part of a web page. Using CSS, you can &npscontrol the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.
+                          * Become a web designer - If you want to start a carrer as a professional web designer, HTML and CSS designing is a must skill.
+                          * Control web - CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML document. Most commonly, CSS is combined with the markup languages HTML or XHTML.
+                          * Learn other languages - Once you understands the basic of HTML and CSS then other related technologies like javascript, php, or angular are become easier to understand.
+                    </p>
+                </div>
+                <div class="button">
+                    <a href="./cssIntro.html" target="_blank" class="a1">Read More</a>
+                </div> 
+            </div>
+            <div class = "container1">
+                <div>
+                    <img src="../assets/jquery.png" class="img"/>
+                </div>                             
+                <div class="heading">
+                    <h4 style="color: white; text-align: center;font-weight: bolder;">
+                        Introduction to jQuery
+                    </h4>
+                </div>
+                <div class="paragraphContainer">
+                    <p class="paragraph" style="color: rgb(6, 69, 94)">
+                        jQuery is a lightweight, "write less, do more", JavaScript library.
+                        The purpose of jQuery is to make it much easier to use JavaScript on your website.
+                        jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+                        jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+                        The jQuery library contains the following features:
+                            * HTML/DOM manipulation
+                            * CSS manipulation
+                            * HTML event methods
+                            * Effects and animations
+                            * AJAX
+                            * Utilities
+                    </p>
+                </div>
+                <div class="button">
+                    <a href="./jqueryIntro.html" target="_blank" class="a1">Read More</a>
+                </div> 
+            </div>
+            <div class = "container1">
+                <div>
+                    <img src="../assets/BOOTSTRAP.png" class="img"/>
+                </div>                             
+                <div class="heading">
+                    <h4 style="color: white; text-align: center;font-weight: bolder;">
+                        Introduction to Bootstrap
+                    </h4>
+                </div>
+                <div class="paragraphContainer">
+                    <p class="paragraph" style="color: purple">
+                        * Bootstrap is the most popular HTML, CSS and JavaScript framework for developing a responsive
+                          and mobile friendly website.<br/>
+                        * It is absolutely free to download and use.<br/>
+                        * It is a front-end framework used for easier and faster web development.<br/>
+                        * It includnavigation, modals, image carousels and many others. <br/>
+                        *es HTML and CSS based design templates for typography, forms, buttons, tables, 
+                         It can also use JavaScript plug-ins.<br/>
+                        * It facilitates you to create responsive designs <br/>
+                    </p>
+                </div>
+                <div class="button">
+                    <a href="./htmlIntro.html" target="_blank" class="a1">Read More</a>
+                </div> 
+            </div>
+            
+    </div>
+    <h2 style="text-align: center; line-height: 3; font-family: Arial; font-size: 40px;font-weight: 800;" id = "contact" >Contact</h2>
+    <div class="footer">
+        <p style="color: black;">Webiste Template for Practical - 8 &#169;  
+            <a href="https://www.beta-labs.in/" target="_blank">
+                Beta-Labs
+            </a>
+            <br/>
+            <a href="#top">
+                Back to Top
+            </a>
+        </p>
+       
+
+  </div>
+</body>
+</html>
