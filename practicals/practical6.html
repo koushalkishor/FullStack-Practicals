@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-6</title>
+    <style>
+        h1 {
+            color: azure;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }   
+        .mainContainer{
+            display: inline-flex;
+            height: 510px;
+            width: 270px;
+        }
+        .imageContainer{
+            align-items: center ;
+            margin: 13px;
+        }
+        img{
+            border-radius: 10px;
+            width: 280px;
+            height: 150px;
+        }
+        .card{
+            background-color:black;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .heading{
+            text-align: center;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;   
+        }
+        .paragraphContainer{
+            height: 197px;
+            margin: 15px;
+
+            text-align: left;
+            overflow: hidden;
+        }
+        .paragraph{
+            margin-left: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .button{
+            background-color: rgb(218, 26, 26);
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin : 15px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            display:block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        a:hover{
+            background: blue;
+           
+        }   
+    </style>
+</head>
+<body style="background-color: rgb(197, 195, 195)">
+    <h1>
+        PRACTICAL - 6: CREATE FOLLOWING LAYOUT USING CSS LAYOUT PROPERTIES
+    </h1>
+    <div class = "mainContainer" >
+    <div class="card">
+        <div class="imageContainer">
+            <img src="../assets/html.jpg" >
+        </div>
+        <div class="heading">
+        <h4 style="color: white;">
+            Introduction to HTML
+        </h4>
+        </div>
+        <div class="paragraphContainer">
+            <p class="paragraph" style="color: orangered;">
+                    HTML stands for HyperText Markup Language. It is used to design web pages using a markup language. 
+                HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the 
+                web pages. A markup language is used to define the text document within tag which defines the 
+                structure of web pages. This language is used to annotate (make notes for the computer) text 
+                so that a machine can understand it and manipulate text accordingly. Most markup languages (e.g. HTML) 
+                are human-readable. The language uses tags to define what manipulation has to be done on the text. 
+                     HTML is a markup language used by the browser to manipulate text, images, and other content, in order
+                to display it in the required format. HTML was created by Tim Berners-Lee in 1991. The first-ever
+                version of HTML was HTML 1.0, but the first standard version was HTML 2.0, published in 1999.
+            </p>
+        </div>  
+        <div class="button">
+            <a href="./htmlIntro.html" target="_blank" >Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="imageContainer">
+            <img src="../assets/css.png">
+        </div>
+        <div class="heading">
+        <h4 style="color: white;">
+            Introduction to CSS
+        </h4>
+        </div>
+        <div class="paragraphContainer">
+            <p class="paragraph" style="color: rgb(194, 5, 137)">
+                Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.
+                CSS is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Web Development Domain. I will list down some of the key advantages of learning CSS:
+                  * Create Stunning Web site - CSS handles the look and feel part of a web page. Using CSS, you can &npscontrol the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.
+                  * Become a web designer - If you want to start a carrer as a professional web designer, HTML and CSS designing is a must skill.
+                  * Control web - CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML document. Most commonly, CSS is combined with the markup languages HTML or XHTML.
+                  * Learn other languages - Once you understands the basic of HTML and CSS then other related technologies like javascript, php, or angular are become easier to understand.
+            </p>
+        </div>
+        <div class="button">
+            <a href="./cssIntro.html" target="_blank" >Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="imageContainer">
+            <img src="../assets/jquery.png">
+        </div>
+        <div class="heading">
+        <h4 style="color: white;">
+            Introduction to jquery
+        </h4>
+        </div>
+        <div class="paragraphContainer">
+            <p class="paragraph" style="color: rgb(6, 69, 94)">
+                jQuery is a lightweight, "write less, do more", JavaScript library.
+                The purpose of jQuery is to make it much easier to use JavaScript on your website.
+                jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+                jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+                The jQuery library contains the following features:
+                    * HTML/DOM manipulation
+                    * CSS manipulation
+                    * HTML event methods
+                    * Effects and animations
+                    * AJAX
+                    * Utilities
+            </p>
+        </div>
+        <div class="button">
+            <a href="./jqueryIntro.html" target="_blank" >Read More</a>
+        </div>
+    </div>
+    
+    <div class="card" >
+        <div class="imageContainer">
+            <img src="../assets/BOOTSTRAP.png">
+        </div>
+        <div class="heading">
+        <h4 style="color: white;">
+            Introduction to Bootstrap
+        </h4>
+        </div>
+        <div class="paragraphContainer">
+            <p class="paragraph" style="color: purple">
+                * Bootstrap is the most popular HTML, CSS and JavaScript framework for developing a responsive
+                  and mobile friendly website.<br/>
+                * It is absolutely free to download and use.<br/>
+                * It is a front-end framework used for easier and faster web development.<br/>
+                * It includnavigation, modals, image carousels and many others. <br/>
+                *es HTML and CSS based design templates for typography, forms, buttons, tables, 
+                 It can also use JavaScript plug-ins.<br/>
+                * It facilitates you to create responsive designs <br/>
+            </p>
+        </div>
+        <div class="button">
+            <a href="./bootstrapIntro.html" target="_blank" >Read More</a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
